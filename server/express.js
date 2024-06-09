@@ -59,9 +59,9 @@ app.use(compress());
 app.use(helmet());
 
 // Routes
-app.get("/", (req, res) => {
+/* app.get("/", (req, res) => {
   res.redirect("https://admindashboard.up.railway.app");
-});
+}); */
 
 app.use("/", authRoutes);
 app.use("/", userRoutes);
