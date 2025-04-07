@@ -29,7 +29,7 @@ const list = async (req, res) => {
         select: "title category precio",
         populate: { path: "category", select: "name" },
       });
-    res.status(200).json(purchaseHistory);
+   return res.status(200).json(purchaseHistory);
   } catch (err) {
     return res.status(400).json({ error: err.message });
   }
