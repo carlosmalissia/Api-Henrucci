@@ -18,8 +18,7 @@ const create = async (req, res) => {
 };
 const list = async (req, res) => {
   try {
-    let purchaseHistory = await PurchaseHistory.find({ isDeleted: false })
-      
+    let list1 = await PurchaseHistory.find({ isDeleted: false })
       .populate({
         path: "user",
         select: "name lastname email",
@@ -29,7 +28,7 @@ const list = async (req, res) => {
         select: "title category price",
         populate: { path: "category", select: "name" },
       });
-    res.status(200).json(purchaseHistory);
+    res.status(200).json(list1);
   } catch (err) {
     return res.status(400).json({ error: err.message });
   }
