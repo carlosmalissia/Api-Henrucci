@@ -13,6 +13,9 @@ const PurchaseHistorySchema = new mongoose.Schema({
       required: true,
     },
   ],
+  total: {
+    type: Numeric
+  },
   status: {
     type: String,
     enum: ["pending", "delivering", "complete"],
