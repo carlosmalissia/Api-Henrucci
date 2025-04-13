@@ -19,7 +19,7 @@ const create = async (req, res) => {
 const list = async (req, res) => {
   try {
     let purchaseHistory = await PurchaseHistory.find({ isDeleted: false })
-      .select("user product created")
+      
       .populate({
         path: "user",
         select: "name lastname email",
