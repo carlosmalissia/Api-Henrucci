@@ -14,7 +14,7 @@ const PurchaseHistorySchema = new mongoose.Schema({
     },
   ],
   total: {
-    type: Numeric
+    type: Number
   },
   status: {
     type: String,
