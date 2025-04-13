@@ -24,8 +24,7 @@ const list = async (req, res) => {
       })
     .populate({
         path: "product",
-        select: "title category price",
-        populate: { path: "category", select: "name" },
+        select: "title category price"
       });
     res.status(200).json(list1);
   } catch (err) {
