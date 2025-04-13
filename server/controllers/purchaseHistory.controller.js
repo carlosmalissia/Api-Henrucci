@@ -21,8 +21,7 @@ const list = async (req, res) => {
     let list1 = await PurchaseHistory.find().populate({
         path: "user",
         select: "name lastname email",
-      })
-    .populate({
+      }).populate({
         path: "product",
         select: "title price"
       });
