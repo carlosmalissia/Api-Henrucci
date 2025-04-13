@@ -18,8 +18,10 @@ const create = async (req, res) => {
 };
 const list = async (req, res) => {
   try {
-    let list1 = await PurchaseHistory.find()
-      
+    let list1 = await PurchaseHistory.find().populate({
+        path: "user",
+        select: "name lastname email",
+      })
     res.status(200).json(list1);
   } catch (err) {
     return res.status(400).json({ error: "etoy aca" });
