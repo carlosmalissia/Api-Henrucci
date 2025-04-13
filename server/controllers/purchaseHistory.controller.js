@@ -30,18 +30,18 @@ const list = async (req, res) => {
       });
     res.status(200).json(list1);
   } catch (err) {
-    return res.status(400).json({ error: err.message });
+    return res.status(400).json({ error: "etoy aca" });
   }
 };
 
 const listPerUser = async (req, res) => {
   const user = req.profile;
   try {
-    const list = await PurchaseHistory.find({ user: user._id }).populate({
+    const list2 = await PurchaseHistory.find({ user: user._id }).populate({
       path: "user",
       select: "name lastname email",
     });
-    res.status(200).json(list);
+    res.status(200).json(list2);
   } catch (error) {
     res.status(400).json({
       message: "can't find any purchase history with that user ID",
