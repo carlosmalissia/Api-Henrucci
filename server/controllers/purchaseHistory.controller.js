@@ -22,6 +22,11 @@ const list = async (req, res) => {
         path: "user",
         select: "name lastname email",
       })
+    .populate({
+        path: "product",
+        select: "title category price",
+        populate: { path: "category", select: "name" },
+      });
     res.status(200).json(list1);
   } catch (err) {
     return res.status(400).json({ error: "etoy aca" });
