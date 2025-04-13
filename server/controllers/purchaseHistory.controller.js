@@ -20,7 +20,7 @@ const list = async (req, res) => {
   try {
     let list1 = await PurchaseHistory.find().populate({
         path: "product",
-        select: "title price"
+        select: "title price",
       });
     res.status(200).json(list1);
   } catch (err) {
