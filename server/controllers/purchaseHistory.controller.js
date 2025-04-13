@@ -19,9 +19,6 @@ const create = async (req, res) => {
 const list = async (req, res) => {
   try {
     let list1 = await PurchaseHistory.find().populate({
-        path: "user",
-        select: "name lastname email",
-      }).populate({
         path: "product",
         select: "title price"
       });
