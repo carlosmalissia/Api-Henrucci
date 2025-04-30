@@ -21,7 +21,7 @@ const list = async (req, res) => {
     let list1 = await PurchaseHistory.find().populate("product");
     res.status(200).json(list1);
   } catch (err) {
-    return res.status(400).json({ error: "etoy aca" });
+    return res.status(400).json({ error: "estoy aca" });
   }
 };
 
